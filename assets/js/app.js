@@ -1,11 +1,27 @@
 const hamburger = document.querySelector(".hamburger")
 const menulist = document.querySelector(".menulist")
+const navline = document.querySelectorAll('.navline')
 
 
 
-hamburger.addEventListener("click" , ()=>{
-    menulist.classList.toggle('active')
+
+
+
+hamburger.addEventListener("click", () => {
+  menulist.classList.toggle("active");
+  document.documentElement.classList.toggle("hidden"); 
+  document.body.classList.toggle("hidden"); 
+  
+});
+
+navline.forEach((nav) =>{
+    nav.addEventListener('click' , () =>{
+        menulist.classList.remove("active");
+document.documentElement.classList.remove("hidden"); 
+  document.body.classList.remove("hidden"); 
+    })
 })
+
 
 
 
