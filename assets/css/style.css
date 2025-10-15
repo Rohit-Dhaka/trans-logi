@@ -4,6 +4,7 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none !important;
+    
 }
 
 
@@ -1891,6 +1892,45 @@ body.dark-mode .service-box {
   color: var(--text-color);
   font-weight: 600;
 }
+
+
+.page-hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: var(--text-color);
+  padding: 60px 20px;
+  background: var(--bg-color);
+}
+
+/* Background image overlay */
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('../images/frontend/aboutussec1.jpeg') center/cover no-repeat;
+  filter: grayscale(100%) brightness(0.45);
+  
+  z-index: 1;
+}
+
+/* Extra gradient layer for depth */
+.page-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05), transparent 40%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+  z-index: 2;
+  pointer-events: none;
+}
+.page-hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 850px;
+}
 .page-hero-content h1 {
   font-size: clamp(38px, 6vw, 64px);
   font-weight: 800;
@@ -2596,18 +2636,13 @@ body.dark-mode .service-box {
   
 }
 @media (min-width:575px) {
+
   .page-hero {
-  position: relative;
+  
   height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  color: var(--text-color);
-  padding: 60px 20px;
-  background: var(--bg-color);
+ 
 }
+
   .title-text {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
@@ -2637,18 +2672,7 @@ body.dark-mode .service-box {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.page-hero {
-  position: relative;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  color: var(--text-color);
-  padding: 60px 20px;
-  background: var(--bg-color);
-}
+
 
 .title-text::after {
     content: '';
