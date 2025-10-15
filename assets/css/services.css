@@ -1,0 +1,372 @@
+.services-split {
+    display: flex;
+    align-items: center;
+    /* ✅ Vertically centered */
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 100px auto;
+    padding: 40px 20px;
+    gap: 60px;
+}
+
+/* Left Side */
+.services-left {
+    flex: 0 0 35%;
+    display: flex;
+    align-items: center;
+}
+
+.services-left-inner {
+    max-width: 90%;
+}
+
+.services-left h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--accent-color), var(--button-bg));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.services-left p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--secondary-text);
+    margin-bottom: 16px;
+}
+
+/* Right Side */
+.services-right {
+    flex: 0 0 65%;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    position: relative;
+}
+
+/* Stagger effect */
+.services-grid> :nth-child(odd) {
+    transform: translateY(30px);
+}
+
+.services-grid> :nth-child(even) {
+    transform: translateY(-30px);
+}
+
+.services-grid> :nth-child(odd):hover {
+    transform: translateY(15px) rotate(-2deg);
+}
+
+.services-grid> :nth-child(even):hover {
+    transform: translateY(-45px) rotate(-2deg);
+}
+
+/* Premium Cards */
+.service-card {
+    padding: 55px 25px 45px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    text-align: left;
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(15px) rotate(-1deg);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.55);
+    background: transparent;
+}
+
+/* Icons */
+.service-card i {
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    margin-bottom: 14px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Text */
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+    line-height: 1.5;
+}
+
+
+
+/* industries serve */
+
+.industries-section {
+  padding: 100px 20px;
+    background: linear-gradient(120deg, var(--secondary-bg), var(--primary-color));
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.industries-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+.industries-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--accent-color), var(--button-bg));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.industries-header p {
+  font-size: 1.15rem;
+  color: var(--secondary-text);
+}
+
+/* Carousel */
+.industries-carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.industries-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.industries-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  gap: 40px;
+}
+
+/* Industry Card */
+.industry-item {
+  flex: 0 0 calc(33.333% - 27px); /* 3 visible items */
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+.industry-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  z-index: 5;               /* <-- bring hovered card on top */
+
+}
+
+.industry-circle {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
+}
+.industry-item:hover .industry-circle {
+  background: var(--accent-color);
+  color: var(--button-text);
+  box-shadow: 5px 5px 20px rgba(255,255,255,0.3);
+  border-color: var(--accent-color);
+}
+
+.industry-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.industry-item p {
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.carousel-btn:hover {
+  background: var(--accent-color);
+  color: var(--button-text);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+.carousel-btn.prev { left: -100px; }
+.carousel-btn.next { right: -100px; }
+
+
+/* world map section */
+
+
+.global-network {
+  background: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.network-header {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.network-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--accent-color), var(--button-bg));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.network-header p {
+  font-size: 1.1rem;
+  color: var(--secondary-text);
+}
+
+/* World Map */
+.world-map {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  margin: auto;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/cover no-repeat;
+  filter: brightness(0.9) contrast(1.2) drop-shadow(0px 1px 1px rgba(255, 255, 255, 1));
+}
+
+/* Markers */
+.marker {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+    background: var(--bg-color);
+  z-index: 10; /* ensures marker stays above map */
+  box-shadow: 0 0 15px 6px rgba(255, 255, 255, 0.7);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marker {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+    background: var(--bg-color);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.6; }
+}
+
+
+/* Ripple Animation */
+.marker::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 2.5s infinite;
+  opacity: 0.6;
+}
+
+@keyframes ripple {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
+  70% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Tooltip */
+.marker::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.6);
+  color: var(--bg-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.marker:hover::after {
+  opacity: 1;
+}
+
+/* OPTIONAL glowing routes */
+.route {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--accent-color);
+  animation: glowRoute 5s linear infinite;
+}
+
+@keyframes glowRoute {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Track Shipment - Trans & Logi</title>
+    <link rel="stylesheet" href="Assets/css/user-dashboard.css">
+    <link rel="stylesheet" href="Assets/css/track-shipment.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../Assets/css/user-dashboard.css">
+    <link rel="stylesheet" href="../Assets/css/style-responsive.css">
+    <link rel="stylesheet" href="../Assets/css/home-responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/track-shipment.css">
+
+    <link rel="stylesheet" href="../Assets/css/home.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+</head>
+
+<body>
+       <nav class="py-lg-4 py-3 px-lg-5 px-4 navbar-color">
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="../index.php"><span class="logo-text">Trans & Logi</span></a>
+          <div class="menulist d-flex align-items-center">
+            <ul class="nav-links mb-0 ps-0">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./services.html">Services</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./track-shipment.html">Track Shipment</a></li>
+            </ul>
+
+            <!-- Theme Toggle -->
+          </div>
+          <div class="d-flex gap-lg-4 gap-2 align-items-center">
+            <div class="theme-toggle" id="themeToggle">
+              <i class="fa-solid fa-sun theme-icon light"></i>
+              <i class="fa-solid fa-moon theme-icon dark"></i>
+            </div>
+
+            <!-- User Icon + Dropdown -->
+            <div class="user-menu">
+              <span class="user-icon"><i class="fa-regular fa-user"></i></span>
+              <div class="user-dropdown" id="userDropdown">
+                <span class="welcome">👋 Hi, User <br />Priyanshu</span>
+                <a href="../User/dashboard.php"
+                  ><i class="fa-solid fa-gauge"></i> Dashboard</a
+                >
+                <a href="../User/logout.php"
+                  ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+                >
+                <a href="../User/login.php"
+                  ><i class="fa-solid fa-right-to-bracket"></i> Login</a
+                >
+                <a href="../User/register.php"
+                  ><i class="fa-solid fa-user-plus"></i> Sign Up</a
+                >
+              </div>
+            </div>
+            <div class="hamburger d-lg-none d-block z-1" id="hamburger">
+              <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="dashboard-container">
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="track-shipment">
+                <!-- Page Heading -->
+                <h2 class="track-title">Track Your Shipment</h2>
+
+                <!-- Search Box -->
+                <form method="GET" class="track-search-box">
+                    <input type="text" name="tracking_number" placeholder="Enter Tracking Number..."
+                        value="SHIP-20251001-68DCB51C8E0B9">
+                    <button type="submit">Track</button>
+                </form>
+
+                <!-- Shipment Details -->
+                <div class="shipment-details">
+                    <h3>Shipment Details</h3>
+                    <div class="shipment-info-grid">
+                        <p><strong>Shipment ID:</strong>
+                            SHIP-20251001-68DCB51C8E0B9
+                        </p>
+                        <p><strong>From:</strong>
+                            Hisar, HR
+                        </p>
+                        <p><strong>To:</strong>
+                            Varanasi, UP
+                        </p>
+                        <p><strong>Dimensions:</strong>
+                            150 kg 15*10*12m
+                        </p>
+                        <p><strong>Expected Delivery:</strong>
+                            04 Oct 2025
+                        </p>
+                        <p><strong>Current Status:</strong>
+                            Delivered
+                        </p>
+                        <p><strong>Payment Status:</strong>
+                            Paid
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline-table">
+                    <h3>Shipment Updates</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Step</th>
+                                <th>Timestamp</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="completed">
+                                <td><i class="bx bx-check-circle"></i></td>
+                                <td>Shipment Pending</td>
+                                <td>Completed</td>
+                                <td>Shipment created from Hisar, HR</td>
+                            </tr>
+                            <tr class="processing">
+                                <td><i class="bx bx-loader-circle bx-spin"></i></td>
+                                <td>Pick Up Waiting</td>
+                                <td>Processing</td>
+                                <td>Shipment is waiting to be picked up</td>
+                            </tr>
+                            <tr class="pending">
+                                <td><i class="bx bx-time"></i></td>
+                                <td>In Transit</td>
+                                <td>Pending</td>
+                                <td>Shipment will head out soon</td>
+                            </tr>
+                            <tr class="pending">
+                                <td><i class="bx bx-time"></i></td>
+                                <td>Delivered</td>
+                                <td>Pending</td>
+                                <td>---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    
+    <script src="./Assets/js/home.js"></script>
+    <script src="./Assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+
+</html>

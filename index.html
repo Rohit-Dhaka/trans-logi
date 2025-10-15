@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../Assets/css/user-dashboard.css" />
+    <link rel="stylesheet" href="../Assets/css/style-responsive.css" />
+    <link rel="stylesheet" href="../Assets/css/home-responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="../Assets/css/style.css    " />
+    <link rel="stylesheet" href="../Assets/css/home.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="py-lg-4 py-3 px-lg-5 px-4 navbar-color">
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="../index.php"><span class="logo-text">Trans & Logi</span></a>
+          <div class="menulist d-flex align-items-center">
+            <ul class="nav-links mb-0 ps-0">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./services.html">Services</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./track-shipment.html">Track Shipment</a></li>
+            </ul>
+
+            <!-- Theme Toggle -->
+          </div>
+          <div class="d-flex gap-lg-4 gap-2 align-items-center">
+            <div class="theme-toggle" id="themeToggle">
+              <i class="fa-solid fa-sun theme-icon light"></i>
+              <i class="fa-solid fa-moon theme-icon dark"></i>
+            </div>
+
+            <!-- User Icon + Dropdown -->
+            <div class="user-menu">
+              <span class="user-icon"><i class="fa-regular fa-user"></i></span>
+              <div class="user-dropdown" id="userDropdown">
+                <span class="welcome">👋 Hi, User <br />Priyanshu</span>
+                <a href="../User/dashboard.php"
+                  ><i class="fa-solid fa-gauge"></i> Dashboard</a
+                >
+                <a href="../User/logout.php"
+                  ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+                >
+                <a href="../User/login.php"
+                  ><i class="fa-solid fa-right-to-bracket"></i> Login</a
+                >
+                <a href="../User/register.php"
+                  ><i class="fa-solid fa-user-plus"></i> Sign Up</a
+                >
+              </div>
+            </div>
+            <div class="hamburger d-lg-none d-block z-1" id="hamburger">
+              <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero-section">
+        <div class="container py-lg-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="hero-content">
+                <h1 class="">Smart Transport & Logistics Solutions</h1>
+                <p>
+                  Seamless deliveries, modern fleet, and global reach for your
+                  business.
+                </p>
+                <div class="hero-buttons">
+                  <a href="./services.php" class="btn btn-primary"
+                    >Explore Services</a
+                  >
+                  <a href="./contact.php" class="btn btn-secondary"
+                    >Get a Quote</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="hero-image">
+                <img
+                  src="./assets/images/png/transperent truck png.png"
+                  alt="Transport Truck Illustration"
+                  class="truck-image"
+                />
+
+                <img
+                  src="./assets/images/png/pallet image.png"
+                  alt="Pallet Box"
+                  class="pallet"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-color">
+        <div class="container">
+          <div class="row gap-lg-0 gap-4 track-strip">
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <span class="label">Call Us</span>
+                  <a href="tel:+917206311599"
+                    ><span class="value">+91 98765 43210</span></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <span class="label">Email</span>
+                  <a
+                    href="mailto:example@email.com?subject=Shipment%20Inquiry&body=Hello%20Team,%0D%0AI%20want%20to%20know%20about%20your%20services."
+                    ><span class="value">support@translogi.com</span></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 d-flex justify-content-lg-end">
+              <div class="track-form d-flex flex-sm-row flex-column">
+                <input
+                  type="text"
+                  id="trackingInput"
+                  placeholder="Enter Track ID"
+                />
+                <button class="btn btn-gradient" onclick="trackShipment()">
+                  Track Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="reason-section">
+      <div class="container">
+        <div class="reason-container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="reason-image">
+                <!-- <img src="Assets/images/frontend/wcu-section-logistics.jpg" alt="Professional Person"> -->
+                <img
+                  src="./assets/images/png/wcu-section-logistics.jpg"
+                  alt="Professional Person"
+                  class=" "
+                />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="reason-content">
+                <div class="section-header flex-md-row flex-column">
+                  <div class="title-text">WHY CHOOSE US</div>
+                  <div class="number-circle"><i class="fas fa-award"></i></div>
+                </div>
+                <p>
+                  At Trans & Logi, we are committed to delivering smarter,
+                  faster, and more reliable logistics solutions. Our modern
+                  fleet, real-time tracking, and customer-first approach ensure
+                  your business stays ahead. Trust us to handle your deliveries
+                  with precision, care, and unmatched efficiency — because we
+                  believe every shipment deserves the gold standard.
+                </p>
+                <div class="reason-grid">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-6 col-12 pt-md-0 pt-3">
+                      <div class="reason-card">
+                        <div class="icon-box">
+                          <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Fast Delivery</h3>
+                        <p>
+                          We ensure your goods are delivered on time, every
+                          time. Our streamlined logistics guarantee speed
+                          without compromising on quality.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 pt-md-0 pt-3">
+                      <div class="reason-card">
+                        <div class="icon-box">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Live Tracking</h3>
+                        <p>
+                          Stay in control with real-time shipment tracking. Get
+                          instant updates and know exactly where your package
+                          is, anytime.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 pt-md-0 pt-3">
+                      <div class="reason-card">
+                        <div class="icon-box">
+                          <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>
+                          Our dedicated support team is available day and night
+                          to answer your questions and solve any issue
+                          instantly.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 pt-md-0 pt-3">
+                      <div class="reason-card">
+                        <div class="icon-box">
+                          <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Global Reach</h3>
+                        <p>
+                          Delivering worldwide with ease, we connect businesses
+                          and customers across borders with reliable global
+                          logistics.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 pt-md-0 pt-3">
+                      <div class="reason-card">
+                        <div class="icon-box">
+                          <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Safe Handling</h3>
+                        <p>
+                          Your packages are handled with the utmost care,
+                          ensuring they arrive securely and in perfect condition
+                          every time.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 pt-md-0 pt-3">
+                      <div class="reason-card">
+                        <div class="icon-box">
+                          <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Reasonable Price</h3>
+                        <p>
+                          We offer highly competitive rates with no hidden
+                          costs, giving you premium service at a price that fits
+                          your budget.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="service-section-header">
+        <div class="section-header flex-md-row flex-column">
+            <div class="title-text">Our Services</div>
+            <div class="number-circle "><i class="fas fa-handshake"></i></div>
+        </div>
+        <p>Providing end-to-end logistics solutions with speed, reliability, and global reach.</p>
+    </div>
+
+    <section class="services-radial">
+
+        <!-- Center Circle -->
+        <div class="circle-center d-lg-flex d-none">
+            <div class="circle-image"></div>
+        </div>
+
+        <!-- Inner Lines (from circle) -->
+        <div class="line inner-line-top-left d-lg-block d-none"></div>
+        <div class="line inner-line-top-right d-lg-block d-none"></div>
+        <div class="line inner-line-bottom-left d-lg-block d-none"></div>
+        <div class="line inner-line-bottom-right d-lg-block d-none"></div>
+
+        <!-- Outer Lines (to service cards) -->
+        <div class="line outer-line-top-left d-lg-block d-none"></div>
+        <div class="line outer-line-top-right d-lg-block d-none"></div>
+        <div class="line outer-line-bottom-left d-lg-block d-none"></div>
+        <div class="line outer-line-bottom-right d-lg-block d-none"></div>
+
+        <!-- Service Cards -->
+     <div class="container">
+       <div class="row">
+         <div class="col-md-6  col-12 pt-md-0 pt-4">
+            <div class="service service-top-left ">
+              <div class="service-box">
+                  <h3>Freight Forwarding</h3>
+                  <p>End-to-end freight solutions with optimized routes, reliable schedules, and complete shipment
+                      visibility across air, sea, and land.</p>
+              </div>
+          </div>
+         </div>
+       <div class="col-md-6  col-12 pt-md-0 pt-4">
+          <div class="service service-top-right ">
+              <div class="service-box">
+                  <h3>Warehousing & Distribu..</h3>
+                  <p>Secure storage facilities and streamlined distribution hubs to keep your supply chain efficient and
+                      cost-effective.</p>
+              </div>
+          </div>
+          </div>
+          <div class="col-md-6  col-12 pt-md-0 pt-4">
+       
+          <div class="service service-bottom-left ">
+              <div class="service-box">
+                  <h3>Last-Mile Delivery</h3>
+                  <p>Fast, accurate, and trackable last-mile services that ensure packages reach customers on time, every
+                      time.</p>
+              </div>
+          </div>
+          </div>
+       <div class="col-md-6  col-12 pt-md-0 pt-4">
+          <div class="service service-bottom-right ">
+              <div class="service-box">
+                  <h3>Supply Chain Management</h3>
+                  <p>Smart logistics planning powered by technology — from inventory control to real-time tracking, we
+                      keep your work seamless.</p>
+              </div>
+          </div>
+          </div>
+       </div>
+     </div>
+    </section>
+        <section class="stats-section">
+        <div class="stats-header">
+            <div class="section-header  flex-md-row flex-column">
+                <div class="title-text">Our Achievements</div>
+                <div class="number-circle"><i class="fas fa-trophy"></i></div>
+            </div>
+            <p>Trusted globally for delivering excellence in logistics.</p>
+        </div>
+
+        <div class="stats-container">
+          <div class="row">
+
+          
+          <div class="col-lg-3 col-sm-6 col-12 pt-lg-0 pt-4">
+              <!-- Stat 1 -->
+            <div class="stat-card">
+                <div class="stat-glow"></div>
+                <div class="stat-icon"><i class="fas fa-truck"></i></div>
+                <h3 class="stat-number" data-target="500">500+</h3>
+                <p>Deliveries Completed</p>
+            </div>
+          </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 pt-lg-0 pt-4">
+              <!-- Stat 2 -->
+            <div class="stat-card">
+                <div class="stat-glow"></div>
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <h3 class="stat-number" data-target="10">10</h3>
+                <p>Years of Experience</p>
+            </div>
+            </div>
+
+          <div class="col-lg-3 col-sm-6 col-12 pt-lg-0 pt-4">
+              <!-- Stat 3 -->
+            <div class="stat-card">
+                <div class="stat-glow"></div>
+                <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                <h3 class="stat-number" data-target="20">20+</h3>
+                <p>Global Partners</p>
+            </div>
+
+          </div>
+         <div class="col-lg-3 col-sm-6 col-12 pt-lg-0 pt-4">
+             <!-- Stat 4 -->
+            <div class="stat-card">
+                <div class="stat-glow"></div>
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <h3 class="stat-number" data-target="400">400+</h3>
+                <p>Happy Clients</p>
+            </div>
+         </div>
+            </div>
+        </div>
+    </section>
+
+       <section class="process-section">
+        <div class="process-inner-section" style="position: relative;">
+            <div class="container-empty-section"></div>
+            <div class="process-container-section">
+                <div class="widget-spacer-container">
+                    <div class="widget-spacer">
+                        <div class="spacer">
+                            <div class="spacer-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-image-container">
+                    <div class="widget-image">                        
+                        <img loading="lazy" decoding="async"  height="585" class="container-img" src="./assets/images/png/container.webp">
+                            
+                    </div>
+                </div>
+                <!-- <div class="widget-spacer-container">
+                    <div class="widget-spacer">
+                        <div class="spacer">
+                            <div class="spacer-inner"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="process-right-section">
+                <div class="right-section-sub-heading">
+                    <div class="sub-heading-section">
+                        <h2 class="sub-heading-title">Shippes</h2>
+                    </div>
+                </div>
+                <div class="right-section-heading">
+                    <div class="heading-section">
+                        <h3 class="heading-title">Shippes</h3>
+                    </div>
+                </div>
+                <a href="#" class="process-point-section">
+                    <div class="process-point-number">
+                        <div class="point-number-section">
+                            <div class="point-number-sec">01</div>
+                        </div>
+                    </div>
+                    <div class="process-point-heading">
+                        <div class="point-heading-section">
+                            <h6 class="point-heading-sec">Full Truckload</h6>
+                        </div>
+                    </div>
+                    <div class="process-point-description">
+                        <div class="point-description-section">
+                            <p class="point-description-sec">Shipping ground? We help you get ahead.</p>
+                        </div>
+                    </div>
+                    <div class="process-point-icon">
+                        <div class="point-icon-section">
+                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="process-point-section">
+                    <div class="process-point-number">
+                        <div class="point-number-section">
+                            <div class="point-number-sec">01</div>
+                        </div>
+                    </div>
+                    <div class="process-point-heading">
+                        <div class="point-heading-section">
+                            <h6 class="point-heading-sec">Full Truckload</h6>
+                        </div>
+                    </div>
+                    <div class="process-point-description">
+                        <div class="point-description-section">
+                            <p class="point-description-sec">Shipping ground? We help you get ahead.</p>
+                        </div>
+                    </div>
+                    <div class="process-point-icon">
+                        <div class="point-icon-section">
+                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="process-point-section">
+                    <div class="process-point-number">
+                        <div class="point-number-section">
+                            <div class="point-number-sec">01</div>
+                        </div>
+                    </div>
+                    <div class="process-point-heading">
+                        <div class="point-heading-section">
+                            <h6 class="point-heading-sec">Full Truckload</h6>
+                        </div>
+                    </div>
+                    <div class="process-point-description">
+                        <div class="point-description-section">
+                            <p class="point-description-sec">Shipping ground? We help you get ahead.</p>
+                        </div>
+                    </div>
+                    <div class="process-point-icon">
+                        <div class="point-icon-section">
+                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="process-point-section">
+                    <div class="process-point-number">
+                        <div class="point-number-section">
+                            <div class="point-number-sec">01</div>
+                        </div>
+                    </div>
+                    <div class="process-point-heading">
+                        <div class="point-heading-section">
+                            <h6 class="point-heading-sec">Full Truckload</h6>
+                        </div>
+                    </div>
+                    <div class="process-point-description">
+                        <div class="point-description-section">
+                            <p class="point-description-sec">Shipping ground? We help you get ahead.</p>
+                        </div>
+                    </div>
+                    <div class="process-point-icon">
+                        <div class="point-icon-section">
+                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="truck-widget-section">
+                <div class="truck-widget-container">
+                    <img loading="lazy" decoding="async" width="1309" height="366"
+                        src="https://swiftline.vamtam.com/wp-content/uploads/2024/09/truck-il.svg"
+                        class="truck-widget-img" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonial-area-nl" aria-label="Testimonials">
+        <div class="nl-wrap">
+            <div class="nl-header">
+                <h5>Our Testimonial</h5>
+                <h2>What Our Clients Say</h2>
+                <p>Real Stories from Real People – Transforming Ideas into Reality</p>
+            </div>
+
+            <div class="nl-testi-wrap testi-wrap-nl" role="list">
+                <!-- item 1 (start active) -->
+                <article class="client-single-nl active position-1" data-position="position-1" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <img src="./assets/images/png/testionial5.webp" alt="Priya Sharma">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>Partnering with Trans & Logi. transformed our supply chain. Their timely deliveries and
+                            transparent tracking system ensured our products reached customers without delays. Truly a
+                            logistics partner we can count on.</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Priya Sharma</h3>
+                        <p>CEO</p>
+                    </div>
+                </article>
+
+                <!-- item 2 -->
+                <article class="client-single-nl inactive position-2" data-position="position-2" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <!-- <img src="assets/images/frontend/testionial8.webp" alt="Anjali Desai"> -->
+                        <img src="./assets/images/png/testionial8.webp" alt="Anjali Desai">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>We expanded into new regions, and Trans & Logi. handled the complexity with ease. From
+                            customs clearance to last-mile delivery, their team managed it all seamlessly.</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Anjali Desai</h3>
+                        <p>Founder</p>
+                    </div>
+                </article>
+
+                <!-- item 3 -->
+                <article class="client-single-nl inactive position-3" data-position="position-3" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <img src="./assets/images/png/testionial6.webp" alt="Seema Reddy">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>Efficiency at its best! Their real-time updates and proactive communication made it easier
+                            to manage inventory and reduce downtime in our operations.</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Ravi Patel</h3>
+                        <p>Operations Manager</p>
+                    </div>
+                </article>
+
+                <!-- item 4 -->
+                <article class="client-single-nl inactive position-4" data-position="position-4" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <img src="./assets/images/png/testionial7.webp" alt="Sanya Kapoor">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>Working with NextLevel Studioz for our music release and promotion was a breeze. Their
+                            ability to understand our brand and promote it digitally was outstanding!</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Sanya Kapoor</h3>
+                        <p>Marketing Lead</p>
+                    </div>
+                </article>
+
+                <!-- item 5 -->
+                <article class="client-single-nl inactive position-5" data-position="position-5" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <img src="./assets/images/png/testionial1.webp" alt="Amit Kumar">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>NextLevel Studioz has been a game-changer for our live concerts and artist management. Their
+                            attention to detail and seamless execution made our event stand out!</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Amit Kumar</h3>
+                        <p>Creative Director</p>
+                    </div>
+                </article>
+
+                <!-- item 6 -->
+                <article class="client-single-nl inactive position-6" data-position="position-6" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <img src="./assets/images/png/testionial3.webp" alt="Ravi Patel">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>The team at NextLevel Studioz brought our digital promotion strategy to life. They made our
+                            song release reach the right audience and generated buzz from day one!</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Ravi Patel</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </article>
+
+                <!-- item 7 -->
+                <article class="client-single-nl inactive position-7" data-position="position-7" role="listitem"
+                    tabindex="0">
+                    <div class="client-img-nl">
+                        <img src="./assets/images/png/testionial4.webp" alt="Sandeep Verma">
+                    </div>
+                    <div class="client-comment-nl">
+                        <h3>NextLevel Studioz is our go-to team for artist management and live event production. Their
+                            professionalism and creativity ensure every project is executed with perfection.</h3>
+                        <span class="quote-i"><i aria-hidden="true">❝</i></span>
+                    </div>
+                    <div class="client-info-nl">
+                        <h3>Sandeep Verma</h3>
+                        <p>Producer</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+      <section class="contact-wrap">
+        <!-- Left Form -->
+         <div class="container">
+
+         
+     <div class="row">
+        <div class="col-lg-8 col-12">
+         <form class="quote-form" action="form_submit.php" method="POST">
+            <h2>Request a Free Quote</h2>
+            <p>Tell us about your shipment — we’ll get back with a tailored solution.</p>
+
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" name="name" required>
+                    <label>Full name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" name="phone" required>
+                    <label>Phone</label>
+                </div>
+                <div class="input-group shipment-select">
+                    <select name="type" required>
+                        <option value="" disabled selected></option>
+                        <option>Air</option>
+                        <option>Sea</option>
+                        <option>Road</option>
+                        <option>Express</option>
+                    </select>
+                    <label>Shipment Type</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" name="pickup" required>
+                    <label>Pickup location</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="destination" required>
+                    <label>Destination</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <select name="country" required>
+                    <option value="" disabled selected></option>
+                    <option>India</option>
+                    <option>Australia</option>
+                    <option>New Zealand</option>
+                    <option>Dubai</option>
+                    <option>USA</option>
+                    <option>Canada</option>
+                    <option>UK</option>
+                </select>
+                <label>Country</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="cargo" required>
+                <label>Cargo weight / details</label>
+            </div>
+
+            <div class="input-group">
+                <textarea name="message" required></textarea>
+                <label>Message / instructions</label>
+            </div>
+
+            <button class="btn-submit" type="submit">🚚 Get My Quote</button>
+        </form>
+
+       </div>
+
+      <div class="col-lg-4 col-12">
+          <!-- Right Floating Info Card -->
+        <div class="floating-card">
+            <div class="info-card">
+                <div class="card-header">📌 Contact Info</div>
+
+                <div class="info-row">
+                    <i class="fas fa-phone"></i>
+                    <div>+91 8009 054294</div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>info@transandlogi.com</div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fas fa-location-dot"></i>
+                    <div>Global HQ — New Delhi, India</div>
+                </div>
+
+                <div id="mapid"></div>
+
+                <div class="serving">
+                    <span>India</span>
+                    <span>Australia</span>
+                    <span>New Zealand</span>
+                    <span>Dubai</span>
+                    <span>USA</span>
+                    <span>Canada</span>
+                    <span>UK</span>
+                </div>
+            </div>
+        </div>
+      </div>
+     </div>
+        </div>
+        <div class="empty-section-contact"></div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-top">
+            <h2 class="logo">Trans & Logi</h2>
+            <p class="tagline">Connecting Continents. Delivering Trust.</p>
+        </div>
+
+        <div class="footer-container">
+
+            <!-- About -->
+            <div class="footer-about">
+                <p>
+                    Trans & Logi ensures seamless logistics across the globe — from air, sea, road, to express delivery.
+                    Our mission is to make cargo movement <strong>smarter, faster, and safer</strong>.
+                </p>
+
+                <!-- Socials under description -->
+                <div class="footer-socials big-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Track Shipment</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Air Freight</a></li>
+                    <li><a href="#">Sea Freight</a></li>
+                    <li><a href="#">Road Transport</a></li>
+                    <li><a href="#">Express Delivery</a></li>
+                    <li><a href="#">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> +91 72063-11599</p>
+                <p><i class="fa-regular fa-envelope"></i> info@transandlogi.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Global HQ — New Delhi, India</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Trans & Logi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/about_us.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

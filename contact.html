@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Trans & Logi</title>
+    <link rel="stylesheet" href="Assets/css/contact.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../Assets/css/user-dashboard.css">
+    <link rel="stylesheet" href="../Assets/css/style-responsive.css">
+    <link rel="stylesheet" href="../Assets/css/home-responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../Assets/css/style.css    ">
+    <link rel="stylesheet" href="../Assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+</head>
+
+
+<body>
+
+    <!-- Navbar Start -->
+    <!-- Navbar Start -->
+      <nav class="py-lg-4 py-3 px-lg-5 px-4 navbar-color">
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="../index.php"><span class="logo-text">Trans & Logi</span></a>
+          <div class="menulist d-flex align-items-center">
+            <ul class="nav-links mb-0 ps-0">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./services.html">Services</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./track-shipment.html">Track Shipment</a></li>
+            </ul>
+
+            <!-- Theme Toggle -->
+          </div>
+          <div class="d-flex gap-lg-4 gap-2 align-items-center">
+            <div class="theme-toggle" id="themeToggle">
+              <i class="fa-solid fa-sun theme-icon light"></i>
+              <i class="fa-solid fa-moon theme-icon dark"></i>
+            </div>
+
+            <!-- User Icon + Dropdown -->
+            <div class="user-menu">
+              <span class="user-icon"><i class="fa-regular fa-user"></i></span>
+              <div class="user-dropdown" id="userDropdown">
+                <span class="welcome">👋 Hi, User <br />Priyanshu</span>
+                <a href="../User/dashboard.php"
+                  ><i class="fa-solid fa-gauge"></i> Dashboard</a
+                >
+                <a href="../User/logout.php"
+                  ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+                >
+                <a href="../User/login.php"
+                  ><i class="fa-solid fa-right-to-bracket"></i> Login</a
+                >
+                <a href="../User/register.php"
+                  ><i class="fa-solid fa-user-plus"></i> Sign Up</a
+                >
+              </div>
+            </div>
+            <div class="hamburger d-lg-none d-block z-1" id="hamburger">
+              <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- Navbar End -->
+
+    <!-- PopUP -->
+    
+
+    <!-- Breadcrumbs -->
+    <section class="page-hero d-flex  flex-sm-row flex-column">
+        <!-- Animated overlay -->
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-gradient"></div>
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span>Contact Us</span></li>
+            </ol>
+        </nav>
+
+        <!-- Center content -->
+        <div class="page-hero-content z-2">
+            <h1>Contact Us</h1>
+            <p>
+                Let’s move your business forward — together. Whether you need tailored logistics solutions, shipment
+                support, or global partnership opportunities, our team is here to help. With dedicated experts available
+                across regions, we ensure your queries are answered quickly.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Us - Heading Section -->
+
+    <section class="contact-heading">
+        <h1>Contact Us</h1>
+        <p>We’re here to support your business worldwide with seamless logistics solutions.</p>
+    </section>
+
+    <section class="contact-cards final-premium">
+        <div class="contact-card">
+            <div class="card-bg-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="card-content">
+                <h2>Email Us</h2>
+                <p><a href="mailto:info@logistics.com">info@logistics.com</a></p>
+                <p><a href="mailto:support@logistics.com">support@logistics.com</a></p>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div class="card-bg-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="card-content">
+                <h2>Call Us</h2>
+                <p><a href="tel:+910000000000">+91 00000 00000</a></p>
+                <p><a href="tel:+910111111111">+91 01111 11111</a></p>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div class="card-bg-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="card-content">
+                <h2>Head Office</h2>
+                <p>123, Business Park,<br>Mumbai, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Map/form -->
+
+    <section class="contact-map-section">
+        <!-- Map Background -->
+        <div class="map-bg">
+            <div id="map"></div>
+        </div>
+
+        <!-- Floating Form -->
+        <div class="contact-form-container">
+            <form class="contact-form" action="form_submit.php" method="POST">
+                <h2>Request a Free Quote</h2>
+                <p>Tell us about your shipment — we’ll get back with a tailored solution.</p>
+
+                <!-- form rows as before -->
+                <div class="row-input">
+                    <div class="contact-input">
+                        <input type="text" name="name" required>
+                        <label>Full name</label>
+                    </div>
+                    <div class="contact-input">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                </div>
+
+                <div class="row-input">
+                    <div class="contact-input">
+                        <input type="text" name="phone" required>
+                        <label>Phone</label>
+                    </div>
+                    <div class="contact-input shipment-select">
+                        <select name="type" required>
+                            <option value="" disabled selected></option>
+                            <option>Air</option>
+                            <option>Sea</option>
+                            <option>Road</option>
+                            <option>Express</option>
+                        </select>
+                        <label>Shipment Type</label>
+                    </div>
+                </div>
+
+                <div class="row-input">
+                    <div class="contact-input">
+                        <input type="text" name="pickup" required>
+                        <label>Pickup location</label>
+                    </div>
+                    <div class="contact-input">
+                        <input type="text" name="destination" required>
+                        <label>Destination</label>
+                    </div>
+                </div>
+
+                <div class="contact-input">
+                    <select name="country" required>
+                        <option value="" disabled selected></option>
+                        <option>India</option>
+                        <option>Australia</option>
+                        <option>New Zealand</option>
+                        <option>Dubai</option>
+                        <option>USA</option>
+                        <option>Canada</option>
+                        <option>UK</option>
+                    </select>
+                    <label>Country</label>
+                </div>
+
+                <div class="contact-input">
+                    <input type="text" name="cargo" required>
+                    <label>Cargo weight / details</label>
+                </div>
+
+                <div class="contact-input">
+                    <textarea name="message" required></textarea>
+                    <label>Message / instructions</label>
+                </div>
+
+                <button class="btn-submit" type="submit">🚚 Get My Quote</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer Section Start -->
+    <!-- Footer Section Start -->
+
+    <footer class="footer">
+        <div class="footer-top">
+            <h2 class="logo">Trans & Logi</h2>
+            <p class="tagline">Connecting Continents. Delivering Trust.</p>
+        </div>
+
+        <div class="footer-container">
+
+            <!-- About -->
+            <div class="footer-about">
+                <p>
+                    Trans & Logi ensures seamless logistics across the globe — from air, sea, road, to express delivery.
+                    Our mission is to make cargo movement <strong>smarter, faster, and safer</strong>.
+                </p>
+
+                <!-- Socials under description -->
+                <div class="footer-socials big-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Track Shipment</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Air Freight</a></li>
+                    <li><a href="#">Sea Freight</a></li>
+                    <li><a href="#">Road Transport</a></li>
+                    <li><a href="#">Express Delivery</a></li>
+                    <li><a href="#">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> +91 72063-11599</p>
+                <p><i class="fa-regular fa-envelope"></i> info@transandlogi.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Global HQ — New Delhi, India</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Trans & Logi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Footer Section End -->
+
+
+
+    <script src="Assets/js/main.js"></script>
+    <script src="Assets/js/contact.js"></script>
+    <script src="Assets/js/home.js"></script>
+    <script src="Assets/js/main.js"></script>
+    <script src="./assets/js/app.js"></script>
+       <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const map = L.map('map').setView([29.151861, 75.721123], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const marker = L.marker([29.151861, 75.721123]).addTo(map)
+            .bindPopup('Hisar, Haryana')
+            .openPopup();
+
+        // Move the map so marker is on left side
+        // Calculate pixel offset
+        const markerLatLng = marker.getLatLng();
+        const offset = map.latLngToContainerPoint(markerLatLng).subtract([-200, 0]); // shift left 150px
+        const newCenter = map.containerPointToLatLng(offset);
+        map.setView(newCenter, map.getZoom());
+    </script>
+
+
+</body>
+
+</html>
